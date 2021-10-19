@@ -11,7 +11,7 @@ function getPDO(): PDO
     $servername = 'localhost';
     $dbname = 'vue-php';
     $user = 'root';
-    $pass = '';
+    $pass = 'root';
 
     $pdo = new PDO("mysql:host=$servername;dbname=$dbname",
     $user, $pass, [
