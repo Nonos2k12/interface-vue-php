@@ -18,7 +18,8 @@
 
   <div id="root"><?= $pageContent ?></div>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
   <script src="./assets/js/vue.js"></script>
 </body>
 

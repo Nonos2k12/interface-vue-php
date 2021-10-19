@@ -1,4 +1,4 @@
-<div class="lobby-container">
+<div id="vue-app" class="lobby-container">
   <ul>
     <li class="name">
       <i class="fas fa-search"></i>
@@ -14,9 +14,14 @@
     </li>
   </ul>
 
-  <div class="wine-list">
-    <div class="wine-card">
-
+  <div class="list-container">
+    <div v-for="wine in wines" class="wine-list">
+      <div class="wine-card">
+        <div class="card-header">
+          <h2>{{wine.name}}</h2>
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
     </div>
   </div>
 </div>
