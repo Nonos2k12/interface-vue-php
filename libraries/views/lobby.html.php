@@ -1,4 +1,8 @@
 <div id="vue-app" class="lobby-container">
+  <div @click="cancelSearch" v-if="searchKey || countrySelected || grapesSelected" class="cancel">
+    <h5>Annuler recherche</h5>
+    <i class="fas fa-times"></i>
+  </div>
   <ul>
     <li v-on:click="searchInput('name')" class="name">
       <i class="fas fa-search"></i>
@@ -16,7 +20,10 @@
     <li v-on:click="searchInput('grapes')" class="grapes">
       <i class="fas fa-wine-glass-alt"></i>
       <div v-if="inputType == 'grapes'" class="radio-container">
-
+          <div v-for="grape in grapesRadio" class="radio">
+            <label :for="grape.name">{{grape.name}}</label>
+            <input v-model="grapesSelected" :id="grape.name" :value="grape.name" type="radio" class="radio-button">
+          </div>
       </div>
     </li>
   </ul>

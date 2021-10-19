@@ -7,6 +7,13 @@ const vue = new Vue({
       countryList: [],
       countryOption: [],
       countrySelected: "",
+      grapesRadio: [
+        { name: "Pinot Noir" },
+        { name: "Sauvignon" },
+        { name: "Merlot" },
+        { name: "Chardonnay" },
+      ],
+      grapesSelected: "",
     };
   },
   computed: {
@@ -16,7 +23,8 @@ const vue = new Vue({
           wine.name.toLowerCase().includes(this.searchKey.toLowerCase()) &&
           wine.country
             .toLowerCase()
-            .includes(this.countrySelected.toLowerCase())
+            .includes(this.countrySelected.toLowerCase()) &&
+          wine.grapes.toLowerCase().includes(this.grapesSelected.toLowerCase())
         );
       });
     },
@@ -30,6 +38,11 @@ const vue = new Vue({
     },
     searchInput(param) {
       this.inputType = param;
+    },
+    cancelSearch() {
+      this.searchKey = "";
+      this.countrySelected = "";
+      this.grapesSelected = "";
     },
   },
   mounted() {
